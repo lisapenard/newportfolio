@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} lisapenard\.fr [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.lisapenard.fr/$1 [R,L]
+
+RewriteEngine On
+#Remove .html suffix
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html  [L]
+
+# 301 permanent redirect all .html to non .html
+RewriteCond %{THE_REQUEST} \.html
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^www. [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)index.html$ [NC]
+RewriteRule . http://www.%{HTTP_HOST}%1 [R=301,NE,L]
+
+RewriteCond %{HTTP_HOST} !^www. [NC]
+RewriteRule . http://www.%{HTTP_HOST}%{REQUEST_URI} [NE,R=301,L]
+
+RewriteCond %{REQUEST_URI} ^(.*/)index.html$ [NC]
+RewriteRule . %1 [R=301,NE,L]

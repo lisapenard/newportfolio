@@ -1,0 +1,172 @@
+/* ====================== */
+/*         	Team          */
+/* ====================== */
+
+#mt_team {
+  padding: 100px 0;
+  position: relative;
+  .owl-dots {
+    text-align: center;
+    margin-top: 30px;
+    .owl-dot.active {
+      background: $shark none repeat scroll 0 0;
+      border-radius: 5px;
+      height: 5px;
+      transition: all 0.5s ease 0s;
+      width: 20px;
+    }
+    .owl-dot {
+      border: 1px solid $shark;
+      border-radius: 5px;
+      display: inline-block;
+      height: 5px;
+      margin-right: 12px;
+      width: 20px;
+    }
+  }
+  .item {
+    @media only screen and (max-width: 449px) {
+      margin: 0 auto;
+      width: 290px;
+    }
+  }
+  .member {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: left;
+    &:before {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      top: 100%;
+      content: '';
+      background-color: $shark;
+      -webkit-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+      -webkit-transition-delay: 0.25s;
+      transition-delay: 0.25s;
+    }
+    img {
+      vertical-align: top;
+      max-width: 100%;
+      backface-visibility: hidden;
+    }
+    figcaption {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h3 {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      font-weight: 700;
+      -webkit-transition-delay: 0.05s;
+      transition-delay: 0.05s;
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: #fff;
+    }
+    h3,
+    .designation_team,
+    .team-social {
+      margin: 0;
+      opacity: 0;
+      letter-spacing: 1px;
+    }
+    .designation_team,
+    .team-social {
+      font-weight: normal;
+      padding: 3px 10px;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+    .designation_team {
+      font-size: 12px;
+      padding: 0 !important;
+      line-height: normal;
+    }
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .team-social {
+      line-height: 10px;
+      padding: 0;
+      li {
+        display: inline-block;
+        margin: 0;
+        @media only screen and (max-width: 767px) {
+          padding-left: 23px;
+        }
+        a {
+          color: #fff;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  .member * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+  .member:hover:before,
+  .member.hover:before {
+    top: 10px;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  .member:hover h3,
+  .member.hover h3,
+  .member:hover .designation_team,
+  .member.hover .designation_team,
+  .member:hover .team-social,
+  .member.hover .team-social {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .member:hover h3,
+  .member.hover h3 {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  .member:hover .team-social,
+  .member.hover .team-social {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+
+  .member:hover .designation_team,
+  .member.hover .designation_team {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+}
+
+/* =========================== */
+/*         	End Team           */
+/* =========================== */
